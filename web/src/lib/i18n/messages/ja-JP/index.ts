@@ -568,6 +568,7 @@ export const jaJPMessages = {
       items: {
         cards: 'カード',
         musicList: '楽曲',
+        lyrics: '歌詞',
         musicMeta: '楽曲Meta',
         soundtrack: 'サウンドトラック',
         character: 'キャラクター',
@@ -638,6 +639,7 @@ export const jaJPMessages = {
     groupPages: {
       cards: 'Browse all card data',
       music: 'Browse all music information',
+      lyrics: '公開済みの歌詞と翻訳を読む',
       musicMeta: 'View difficulty and data analysis for songs',
       soundtrack: 'A polished soundtrack player for background music',
       character: 'View detailed character profiles',
@@ -707,6 +709,16 @@ export const jaJPMessages = {
   },
   settings: {
     title: '設定',
+    sections: {
+      visual: 'ビジュアル',
+      content: 'コンテンツ',
+      data: 'データ',
+      about: '概要'
+    },
+    about: {
+      projectDescription: 'PROJECT SEKAI データベース & ビューア',
+      viewDetails: 'プロジェクトについて'
+    },
     appearance: {
       sectionTitle: '表示設定',
       system: 'システム',
@@ -756,6 +768,14 @@ export const jaJPMessages = {
       label: '広告を表示',
       description: 'プロジェクト運営の支援になります'
     },
+    analytics: {
+      sectionTitle: 'プライバシー',
+      label: '匿名の利用状況分析を許可',
+      description: '同意した場合のみ、本番サイトで Google Analytics を読み込みます。同意はいつでも取り消せます。',
+      statusGranted: '利用状況分析を許可しています',
+      statusDenied: '利用状況分析は既定で無効です',
+      privacySignal: 'ブラウザのプライバシー信号（GPC または Do Not Track）により無効です'
+    },
     assetSource: {
       sectionTitle: 'アセット回線',
       main: 'メイン',
@@ -776,16 +796,16 @@ export const jaJPMessages = {
       checking: '確認中...',
       loadFailed: '読み込みに失敗しました',
       noCache: '未キャッシュ',
-      cached: 'データはローカルにキャッシュ済みです。次回以降はブラウザDBから読み込みます',
-      stale: '新しいバージョンを検出しました。次回読み込み時に自動更新されます',
-      firstVisit: '初回訪問です。データをサーバーから読み込み、ローカルにキャッシュします'
+      cached: 'ローカルにキャッシュ済み',
+      stale: '新しいバージョンを検出',
+      firstVisit: 'サーバーから読み込み中'
     },
     refresh: {
       idle: 'すべてのデータを強制更新',
       refreshing: '更新中...'
     },
     footer: {
-      version: 'Moesekai · 1.6-preview-beta1'
+      version: 'Moesekai · 1.6-preview-beta4'
     },
     sidebar: {
       notLoggedIn: '未ログイン',
@@ -1006,7 +1026,7 @@ export const jaJPMessages = {
       },
       policies: {
         title: 'Site Policies and Ads',
-        description: 'Moesekai uses Google AdSense to cover part of the operating costs. For Cookie, personalized ads, and user data handling details, please see the pages below. (Ads are not actually enabled yet.)',
+        description: '現在、広告は無効です。端末内のアカウント情報、OAuth2 トークン、アクセス解析への同意、第三者サービスの実際の取り扱いは、以下のポリシーをご確認ください。',
         privacy: 'プライバシーポリシー',
         terms: '利用規約',
         googleAds: 'Google Ad Settings',
@@ -1014,7 +1034,7 @@ export const jaJPMessages = {
       },
       sponsors: {
         title: 'Sponsor Thanks (in no particular order)',
-        list: '阳子(support server), Hakuchumu, 性价比, luoxia, 雪莹ちゃん, 蘸色绘糖/晕星奏, tony_all, 沙皮, 轩, 末乐回忆, metamiku, madoka, 垂耳兔kawayi, amia, maveriki,and four supporters who prefer not to disclose their IDs.'
+        list: '阳子(support server), Hakuchumu, 性价比, luoxia, 雪莹ちゃん, 蘸色绘糖/晕星奏, tony_all, 沙皮, 轩, 末乐回忆 M氏 ick110811, metamiku, madoka, 垂耳兔kawayi, amia, maveriki,and four supporters who prefer not to disclose their IDs.'
       },
       specialThanks: {
         title: 'Supporter Thanks (in no particular order)',
@@ -1031,6 +1051,59 @@ export const jaJPMessages = {
         joinGroup: 'Moesekai Literature Team',
         joinSuffix: '.'
       }
+    },
+    privacy: {
+      title: 'プライバシーポリシー',
+      updated: '最終更新日：2026年7月24日',
+      overview: {
+        title: '1. 概要',
+        body: 'Moesekai（pjsk.moe）は、非営利の PROJECT SEKAI ファン向けデータビューアーです。本ポリシーでは、端末に保存される情報、第三者サービスとの通信、および利用者が行える管理について説明します。'
+      },
+      local: {
+        title: '2. 端末に保存されるデータ',
+        intro: 'Moesekai のサーバーアカウントは不要ですが、一部機能はブラウザーの localStorage または sessionStorage に次の情報を保存します。',
+        preferences: '言語、テーマ、サイドバー、フィルター、アクセス解析への同意などの表示設定。',
+        account: '利用者が追加したゲームアカウントの識別子、サーバー、ニックネーム、アバターなどのプロフィール情報。',
+        tokens: 'OAuth2 接続時に取得したアクセストークン、リフレッシュトークン、権限範囲、有効期限。これらは機密性の高い認証情報です。',
+        gameData: 'キャラクター、編成、素材、エリアアイテム、マイセカイ情報など、アカウント機能用に同期したゲームデータのスナップショット。',
+        note: 'これらのアカウント情報と OAuth2 トークンは、このブラウザー内に保存され、Moesekai のクラウドアカウントデータベースには送信されません。共有端末では、利用後にアカウントとサイトデータを削除してください。'
+      },
+      network: {
+        title: '3. 通信と第三者サービス',
+        intro: '対応する機能を利用すると、ブラウザーはコンテンツ、公開ゲーム API、または OAuth2 提供者へリクエストを送信します。',
+        oauth: 'OAuth2 提供者は、独自のポリシーに基づいてログイン、認可コード、トークン、連携ゲームアカウントを処理します。',
+        publicApi: '公開 API または認可 API は、選択したサーバーとゲーム UID を受け取り、サイト機能で使うゲームデータを返します。',
+        analytics: '明示的に許可し、ブラウザーから拒否のプライバシー信号が送られていない場合のみ Google Analytics を読み込みます。その際、Google はページ、端末、ブラウザー、IP アドレス、時刻などの技術情報を受け取ることがあります。'
+      },
+      cookies: {
+        title: '4. Cookie、アクセス解析、広告',
+        analytics: 'Google Analytics は初期状態で無効です。サイト設定で同意または撤回でき、撤回後はタグを無効化し、関連する解析 Cookie の削除を試みます。',
+        adsDisabled: '現在、広告機能は無効です。Google AdSense の広告スクリプトは読み込まず、広告収入にも依存していません。将来広告を有効にする前に、本ポリシーと同意画面を更新します。'
+      },
+      use: {
+        title: '5. データの利用目的',
+        functionality: '設定を記憶し、アカウント、編成、計算ツールを提供するため。',
+        sync: '利用者の操作に応じて、選択した API からゲームデータを同期・表示するため。',
+        analytics: '同意がある場合に集計された利用状況を把握し、サイトを保守・改善するため。'
+      },
+      sharing: {
+        title: '6. 共有と販売',
+        body: '端末に保存されたアカウント情報や OAuth2 トークンを販売しません。機能に必要なデータだけを、ブラウザーから対応する API、OAuth2、解析提供者へ送信し、各第三者は独自のポリシーで処理します。'
+      },
+      controls: {
+        title: '7. 利用者による管理',
+        delete: 'アカウント管理で保存済みアカウントを削除できます。ブラウザーで pjsk.moe のサイトデータを消去すると、設定、アカウントのスナップショット、トークンをすべて削除できます。',
+        consent: 'サイト設定から、アクセス解析への同意をいつでも許可または撤回できます。',
+        browser: 'Cookie、ストレージ、Do Not Track、Global Privacy Control のブラウザー設定でも処理を制限できます。'
+      },
+      links: {
+        title: '8. 第三者リンク',
+        body: '外部リンクは離脱確認画面を経由します。第三者サイトには独自のコンテンツとプライバシーポリシーがあります。',
+        googlePrivacy: 'Google プライバシーポリシー'
+      },
+      children: { title: '9. 子どものプライバシー', body: '本サイトは13歳未満の子どもを対象としておらず、その個人情報を意図的に収集しません。' },
+      changes: { title: '10. ポリシーの変更', body: '変更は更新日とともに本ページで公開します。データ処理の重大な変更は、必要に応じて別途通知します。' },
+      contact: { title: '11. お問い合わせ', body: '本ポリシーまたはデータ処理に関するお問い合わせ先：', github: 'GitHub', qq: 'QQグループ' }
     },
     leave: {
       badge: 'リダイレクト通知',
@@ -1457,6 +1530,7 @@ export const jaJPMessages = {
       notFoundTitle: 'Song Not Found (404)',
       notFoundDesc: 'Please verify if the song ID is correct. If this song was recently released, try going to Settings to switch or refresh the data server.',
       backToList: 'Back to Music List',
+      goToLyrics: '歌詞ページへ',
       jacketPreviewTitle: '{title} Jacket Art',
       clickExpand: 'Click to expand',
       basicInfo: 'Song Info',
@@ -1525,6 +1599,50 @@ export const jaJPMessages = {
           label: 'Auto Score Ranking',
           shortLabel: 'Auto Score'
         }
+      }
+    },
+    lyrics: {
+      badge: '歌詞ライブラリ',
+      title: '歌詞',
+      titleHighlight: 'ライブラリ',
+      description: '公開済みの日本語歌詞と簡体字中国語・英語翻訳を閲覧できます。',
+      filterTitle: '歌詞フィルター',
+      countUnit: '曲',
+      searchPlaceholder: '楽曲名または ID を検索...',
+      error: '歌詞データの読み込みに失敗しました',
+      loading: '歌詞を読み込んでいます...',
+      empty: '一致する歌詞が見つかりません',
+      emptyHint: '翻訳リポジトリで公開済みの歌詞のみ表示されます。',
+      loadMore: 'さらに読み込む',
+      allLoaded: '全 {count} 曲の歌詞を表示しました',
+      backToList: '歌詞一覧へ戻る',
+      notFound: 'この楽曲の歌詞が見つかりません',
+      emptyDocument: 'この歌詞ファイルには表示できる行がありません。',
+      contentTitle: '歌詞本文',
+      japanese: '日本語原文',
+      chinese: '簡体字中国語',
+      english: '英語',
+      sourceFallback: '対象言語の翻訳がないため、日本語原文を表示しています。',
+      attribution: '翻訳クレジット',
+      translation: '翻訳',
+      proofreading: '校正',
+      translationAndProofreading: '翻訳・校正',
+      translationCreditsEmpty: '翻訳クレジットは未登録です。',
+      sourceLicenseTitle: '歌詞の出典とライセンス',
+      revision: '公開リビジョン',
+      updatedAt: '更新日',
+      versionLabel: '歌詞バージョン',
+      versionFull: 'Full',
+      versionGame: 'Game',
+      versionFullAndGame: 'Full｜Game',
+      translationFallback: '日本語原文を表示',
+      sourceRevision: '出典リビジョン',
+      sourceLicense: 'ライセンス',
+      attributionProviders: {
+        vocaloid_fandom: 'Vocaloid Lyrics Wiki',
+        moegirl: '萌娘百科',
+        moegirl_public_exact: '萌娘百科（完全公開ページ）',
+        sekaipedia: 'Sekaipedia'
       }
     },
     musicMeta: {
@@ -1733,6 +1851,7 @@ export const jaJPMessages = {
       wishSelectTitle: 'Current Wish Pick',
       wishSelectSubTitle: 'Select Wish Pick Cards',
       wishSelectDesc: 'Choose {limit} cards. Selected Wish Pick and current new featured cards are calculated at 0.4% each, and other 4★ cards share the remaining rate.',
+      wishSelectClear: '選択解除 ({count})',
       selected: '選択中',
       clickSelect: '選択',
       newPuCardsTitle: 'New Featured Cards ({count})',
@@ -1756,6 +1875,19 @@ export const jaJPMessages = {
       star4Label: '4★',
       history4StarsTitle: 'History 4★ / Birthday Results',
       pityPull: '{count} pulls',
+      summaryTitle: 'ガチャ概要',
+      descriptionTitle: 'ガチャ詳細・注意事項',
+      bubbleTitle: 'ガチャキャッチコピー',
+      cardPoolTitle: '出現メンバー一覧 ({count})',
+      cardPoolSubtitle: 'このガチャから出現する全てのメンバー',
+      filterAllRarities: 'すべてのレアリティ',
+      weightLabel: '重み: {weight}',
+      rateShareLabel: '同レアリティ内確率: {percentage}%',
+      showMoreDescription: '詳細ルールを表示',
+      showLessDescription: '詳細ルールをたたむ',
+      showMoreSummary: '詳細概要を表示',
+      showLessSummary: '詳細概要をたたむ',
+      viewFullCardPool: '出現メンバー一覧を表示 ({count})',
       states: {
         notStarted: '未開始',
         ongoing: '開催中',

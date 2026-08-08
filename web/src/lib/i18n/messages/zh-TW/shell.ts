@@ -20,6 +20,7 @@ export const zhTWLayout = {
         items: {
             cards: "卡牌",
             musicList: "歌曲清單",
+            lyrics: "歌詞",
             musicMeta: "歌曲 Meta",
             soundtrack: "遊戲原聲帶",
             character: "角色",
@@ -90,6 +91,7 @@ export const zhTWLayout = {
     groupPages: {
         cards: "瀏覽所有卡牌資料",
         music: "瀏覽所有歌曲資訊",
+        lyrics: "閱讀已發布的歌曲歌詞與翻譯",
         musicMeta: "查看歌曲難度與資料分析",
         soundtrack: "使用精緻的遊戲原聲帶播放器",
         character: "查看角色詳細資料",
@@ -161,6 +163,16 @@ export const zhTWSearch = {
 
 export const zhTWSettings = {
     title: "設定",
+    sections: {
+        visual: "視覺",
+        content: "內容",
+        data: "數據",
+        about: "關於",
+    },
+    about: {
+        projectDescription: "PROJECT SEKAI 檢視器與資料庫",
+        viewDetails: "關於本專案",
+    },
     appearance: {
         sectionTitle: "外觀模式",
         system: "跟隨系統",
@@ -210,6 +222,14 @@ export const zhTWSettings = {
         label: "顯示廣告",
         description: "這是支持我們持續營運的方式之一",
     },
+    analytics: {
+        sectionTitle: "隱私",
+        label: "允許匿名使用情況分析",
+        description: "只有在你同意後，正式網站才會載入 Google Analytics。你可以隨時撤回同意。",
+        statusGranted: "已允許使用情況分析",
+        statusDenied: "預設不啟用使用情況分析",
+        privacySignal: "瀏覽器的隱私信號（GPC 或 Do Not Track）已停用使用情況分析",
+    },
     assetSource: {
         sectionTitle: "Assets 線路",
         main: "主要線路",
@@ -230,16 +250,16 @@ export const zhTWSettings = {
         checking: "檢查中...",
         loadFailed: "載入失敗",
         noCache: "尚未快取",
-        cached: "資料已快取至本機，之後造訪時將從瀏覽器資料庫載入",
-        stale: "偵測到新版本，資料會在下次載入時自動更新",
-        firstVisit: "首次造訪，資料將從伺服器載入並快取至本機",
+        cached: "資料已快取至本機",
+        stale: "檢測到新版本",
+        firstVisit: "從伺服器載入",
     },
     refresh: {
         idle: "強制重新整理所有資料",
         refreshing: "重新整理中...",
     },
     footer: {
-        version: "Moesekai · 1.6-preview-beta1",
+        version: "Moesekai · 1.6-preview-beta4",
     },
     sidebar: {
         notLoggedIn: "尚未登入",
